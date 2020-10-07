@@ -1,0 +1,1231 @@
+
+> Configure project :
+Building project 'core' with Scala version 2.13.2
+Building project 'streams-scala' with Scala version 2.13.2
+
+> Task :core:dependencies
+
+------------------------------------------------------------
+Project :core
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+No dependencies
+
+apiElements - API elements for main. (n)
+No dependencies
+
+archives - Configuration for archive artifacts. (n)
+No dependencies
+
+checkstyle - The Checkstyle libraries to be used for this project.
+\--- com.puppycrawl.tools:checkstyle:8.20
+     +--- info.picocli:picocli:3.9.6
+     +--- antlr:antlr:2.7.7
+     +--- org.antlr:antlr4-runtime:4.7.2
+     +--- commons-beanutils:commons-beanutils:1.9.3
+     |    \--- commons-collections:commons-collections:3.2.2
+     +--- com.google.guava:guava:27.1-jre
+     |    +--- com.google.guava:failureaccess:1.0.1
+     |    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+     |    +--- com.google.code.findbugs:jsr305:3.0.2
+     |    +--- org.checkerframework:checker-qual:2.5.2
+     |    +--- com.google.errorprone:error_prone_annotations:2.2.0
+     |    +--- com.google.j2objc:j2objc-annotations:1.1
+     |    \--- org.codehaus.mojo:animal-sniffer-annotations:1.17
+     \--- net.sf.saxon:Saxon-HE:9.9.1-2
+          \--- com.ibm.icu:icu4j:63.1
+
+compileClasspath - Compile classpath for source set 'main'.
++--- project :clients
+|    +--- com.github.luben:zstd-jni:1.4.5-2
+|    +--- org.lz4:lz4-java:1.7.1
+|    +--- org.xerial.snappy:snappy-java:1.1.7.3
+|    \--- org.slf4j:slf4j-api:1.7.30
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2
+|    +--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    \--- com.fasterxml.jackson.module:jackson-module-paranamer:2.10.2
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|         \--- com.thoughtworks.paranamer:paranamer:2.8
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
++--- net.sf.jopt-simple:jopt-simple:5.0.4
++--- com.yammer.metrics:metrics-core:2.2.0
+|    \--- org.slf4j:slf4j-api:1.7.2 -> 1.7.30
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6
+|    \--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1
+|    \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.scala-lang:scala-library:2.13.2
++--- org.scala-lang:scala-reflect:2.13.2
+|    \--- org.scala-lang:scala-library:2.13.2
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
++--- org.slf4j:slf4j-api:1.7.30
++--- org.apache.zookeeper:zookeeper:3.5.8
+|    +--- org.apache.zookeeper:zookeeper-jute:3.5.8
+|    |    \--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- io.netty:netty-handler:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-resolver:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-transport:4.1.48.Final
+|    |    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    |    \--- io.netty:netty-resolver:4.1.48.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    +--- io.netty:netty-transport-native-epoll:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.48.Final (*)
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- commons-cli:commons-cli:1.4
+\--- log4j:log4j:1.2.17
+
+compileOnly - Compile only dependencies for source set 'main'. (n)
+\--- log4j:log4j:1.2.17 (n)
+
+default - Configuration for default artifacts. (n)
+No dependencies
+
+implementation - Implementation only dependencies for source set 'main'. (n)
+No dependencies
+
+incrementalScalaAnalysisElements - Incremental compilation analysis files (n)
+No dependencies
+
+incrementalScalaAnalysisFormain - Incremental compilation analysis files for main
++--- project :clients FAILED
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2 FAILED
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2 FAILED
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2 FAILED
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2 FAILED
++--- net.sf.jopt-simple:jopt-simple:5.0.4 FAILED
++--- com.yammer.metrics:metrics-core:2.2.0 FAILED
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6 FAILED
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1 FAILED
++--- org.scala-lang:scala-library:2.13.2 FAILED
++--- org.scala-lang:scala-reflect:2.13.2 FAILED
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2 FAILED
++--- org.slf4j:slf4j-api:1.7.30 FAILED
++--- org.apache.zookeeper:zookeeper:3.5.8 FAILED
+\--- commons-cli:commons-cli:1.4 FAILED
+
+incrementalScalaAnalysisForscoverage - Incremental compilation analysis files for scoverage
+No dependencies
+
+incrementalScalaAnalysisFortest - Incremental compilation analysis files for test
++--- project :clients FAILED
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2 FAILED
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2 FAILED
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2 FAILED
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2 FAILED
++--- net.sf.jopt-simple:jopt-simple:5.0.4 FAILED
++--- com.yammer.metrics:metrics-core:2.2.0 FAILED
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6 FAILED
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1 FAILED
++--- org.scala-lang:scala-library:2.13.2 FAILED
++--- org.scala-lang:scala-reflect:2.13.2 FAILED
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2 FAILED
++--- org.slf4j:slf4j-api:1.7.30 FAILED
++--- org.apache.zookeeper:zookeeper:3.5.8 FAILED
++--- commons-cli:commons-cli:1.4 FAILED
++--- org.bouncycastle:bcpkix-jdk15on:1.64 FAILED
++--- org.mockito:mockito-core:3.3.3 FAILED
++--- org.easymock:easymock:4.2 FAILED
++--- org.apache.directory.api:api-all:1.0.2 FAILED
++--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-interceptor-kerberos:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-protocol-kerberos:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-protocol-ldap:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-ldif-partition:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-mavibot-partition:2.0.0-M24 FAILED
++--- org.apache.directory.server:apacheds-jdbm-partition:2.0.0-M24 FAILED
++--- junit:junit:4.13 FAILED
++--- org.scalatest:scalatest_2.13:3.0.8 FAILED
++--- org.slf4j:slf4j-log4j12:1.7.30 FAILED
+\--- jfreechart:jfreechart:1.0.0 FAILED
+
+runtimeClasspath - Runtime classpath of source set 'main'.
++--- project :clients
+|    +--- com.github.luben:zstd-jni:1.4.5-2
+|    +--- org.lz4:lz4-java:1.7.1
+|    +--- org.xerial.snappy:snappy-java:1.1.7.3
+|    \--- org.slf4j:slf4j-api:1.7.30
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2
+|    +--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    \--- com.fasterxml.jackson.module:jackson-module-paranamer:2.10.2
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|         \--- com.thoughtworks.paranamer:paranamer:2.8
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
++--- net.sf.jopt-simple:jopt-simple:5.0.4
++--- com.yammer.metrics:metrics-core:2.2.0
+|    \--- org.slf4j:slf4j-api:1.7.2 -> 1.7.30
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6
+|    \--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1
+|    \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.scala-lang:scala-library:2.13.2
++--- org.scala-lang:scala-reflect:2.13.2
+|    \--- org.scala-lang:scala-library:2.13.2
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
++--- org.slf4j:slf4j-api:1.7.30
++--- org.apache.zookeeper:zookeeper:3.5.8
+|    +--- org.apache.zookeeper:zookeeper-jute:3.5.8
+|    |    \--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- io.netty:netty-handler:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-resolver:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-transport:4.1.48.Final
+|    |    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    |    \--- io.netty:netty-resolver:4.1.48.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    +--- io.netty:netty-transport-native-epoll:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.48.Final (*)
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+\--- commons-cli:commons-cli:1.4
+
+runtimeElements - Elements of runtime for main. (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for source set 'main'. (n)
+No dependencies
+
+scalaCompilerPlugins
+No dependencies
+
+scoverage - Scoverage dependencies
++--- org.scoverage:scalac-scoverage-plugin_2.13:1.4.1
+|    +--- org.scala-lang:scala-library:2.13.1
+|    \--- org.scala-lang.modules:scala-xml_2.13:1.2.0
+|         \--- org.scala-lang:scala-library:2.13.0 -> 2.13.1
+\--- org.scoverage:scalac-scoverage-runtime_2.13:1.4.1
+     \--- org.scala-lang:scala-library:2.13.1
+
+scoverageAnnotationProcessor - Annotation processors and their dependencies for source set 'scoverage'.
+No dependencies
+
+scoverageCompileClasspath - Compile classpath for source set 'scoverage'.
+No dependencies
+
+scoverageCompileOnly - Compile only dependencies for source set 'scoverage'. (n)
+No dependencies
+
+scoverageImplementation - Implementation only dependencies for source set 'scoverage'. (n)
+No dependencies
+
+scoverageRuntimeClasspath - Runtime classpath of source set 'scoverage'.
+No dependencies
+
+scoverageRuntimeOnly - Runtime only dependencies for source set 'scoverage'. (n)
+No dependencies
+
+signatures
+No dependencies
+
+spotbugs - configuration for the SpotBugs engine
+\--- com.github.spotbugs:spotbugs:4.0.3
+     +--- jaxen:jaxen:1.1.6
+     +--- net.sf.saxon:Saxon-HE:9.9.1-2
+     |    \--- com.ibm.icu:icu4j:63.1
+     +--- org.ow2.asm:asm:8.0.1
+     +--- org.ow2.asm:asm-analysis:8.0.1
+     |    \--- org.ow2.asm:asm-tree:8.0.1
+     |         \--- org.ow2.asm:asm:8.0.1
+     +--- org.ow2.asm:asm-commons:8.0.1
+     |    +--- org.ow2.asm:asm:8.0.1
+     |    +--- org.ow2.asm:asm-tree:8.0.1 (*)
+     |    \--- org.ow2.asm:asm-analysis:8.0.1 (*)
+     +--- org.ow2.asm:asm-tree:8.0.1 (*)
+     +--- org.ow2.asm:asm-util:8.0.1
+     |    +--- org.ow2.asm:asm:8.0.1
+     |    +--- org.ow2.asm:asm-tree:8.0.1 (*)
+     |    \--- org.ow2.asm:asm-analysis:8.0.1 (*)
+     +--- org.apache.bcel:bcel:6.4.1
+     +--- net.jcip:jcip-annotations:1.0
+     +--- org.dom4j:dom4j:2.1.1
+     +--- org.apache.commons:commons-lang3:3.10
+     +--- org.apache.commons:commons-text:1.8
+     |    \--- org.apache.commons:commons-lang3:3.9 -> 3.10
+     +--- org.slf4j:slf4j-api:1.8.0-beta4
+     \--- com.github.spotbugs:spotbugs-annotations:4.0.3
+          \--- com.google.code.findbugs:jsr305:3.0.2
+
+spotbugsPlugins - configuration for the external SpotBugs plugins
+No dependencies
+
+spotbugsSlf4j - configuration for the SLF4J provider to run SpotBugs
+\--- org.slf4j:slf4j-simple:1.8.0-beta4
+     \--- org.slf4j:slf4j-api:1.8.0-beta4
+
+testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+No dependencies
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- project :clients
+|    +--- com.github.luben:zstd-jni:1.4.5-2
+|    +--- org.lz4:lz4-java:1.7.1
+|    +--- org.xerial.snappy:snappy-java:1.1.7.3
+|    \--- org.slf4j:slf4j-api:1.7.30
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2
+|    +--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    \--- com.fasterxml.jackson.module:jackson-module-paranamer:2.10.2
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|         \--- com.thoughtworks.paranamer:paranamer:2.8
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
++--- net.sf.jopt-simple:jopt-simple:5.0.4
++--- com.yammer.metrics:metrics-core:2.2.0
+|    \--- org.slf4j:slf4j-api:1.7.2 -> 1.7.30
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6
+|    \--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1
+|    \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.scala-lang:scala-library:2.13.2
++--- org.scala-lang:scala-reflect:2.13.2
+|    \--- org.scala-lang:scala-library:2.13.2
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
++--- org.slf4j:slf4j-api:1.7.30
++--- org.apache.zookeeper:zookeeper:3.5.8
+|    +--- org.apache.zookeeper:zookeeper-jute:3.5.8
+|    |    \--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- io.netty:netty-handler:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-resolver:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-transport:4.1.48.Final
+|    |    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    |    \--- io.netty:netty-resolver:4.1.48.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    +--- io.netty:netty-transport-native-epoll:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.48.Final (*)
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- commons-cli:commons-cli:1.4
++--- org.bouncycastle:bcpkix-jdk15on:1.64
+|    \--- org.bouncycastle:bcprov-jdk15on:1.64
++--- org.mockito:mockito-core:3.3.3
+|    +--- net.bytebuddy:byte-buddy:1.10.5
+|    +--- net.bytebuddy:byte-buddy-agent:1.10.5
+|    \--- org.objenesis:objenesis:2.6 -> 3.1
++--- org.easymock:easymock:4.2
+|    \--- org.objenesis:objenesis:3.1
++--- org.apache.directory.api:api-all:1.0.2
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.xpp3:1.1.4c_7
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.dom4j:1.6.1_5
+|    +--- commons-pool:commons-pool:1.6
+|    +--- commons-lang:commons-lang:2.6
+|    +--- commons-collections:commons-collections:3.2.2
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    \--- commons-codec:commons-codec:1.11
++--- org.apache.directory.server:apacheds-core-api:2.0.0-M24
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.server:apacheds-core-constants:2.0.0-M24
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.api:api-i18n:1.0.0
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0
+|    |    \--- org.apache.directory.api:api-i18n:1.0.0
+|    +--- org.apache.directory.api:api-ldap-client-api:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.mina:mina-core:2.0.16
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.21 -> 1.7.30
+|    |    |    |    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    |    \--- commons-codec:commons-codec:1.10 -> 1.11
+|    |    |    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    \--- commons-collections:commons-collections:3.2.2
+|    |    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    \--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0
+|    |    |         \--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    +--- commons-pool:commons-pool:1.6
+|    |    \--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    \--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- net.sf.ehcache:ehcache:2.10.4
+|    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.30
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-interceptor-kerberos:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.30
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-admin:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-authn:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-client-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-number:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-authz:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-changelog:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-collective:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-event:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-exception:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-journal:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-normalization:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-operational:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-referral:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-schema:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-subtree:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-trigger:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-trigger:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    |    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    |    |    \--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- org.bouncycastle:bcprov-jdk15on:1.56 -> 1.64
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-kerberos:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-ldap:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3 (*)
+|    +--- org.apache.directory.server:apacheds-jdbm-partition:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3 (*)
+|    |    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-client-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-sp:1.0.0
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    \--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.bouncycastle:bcprov-jdk15on:1.56 -> 1.64
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-ldif-partition:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-mavibot-partition:2.0.0-M24
+|    +--- org.apache.directory.mavibot:mavibot:1.0.0-M8
+|    |    +--- commons-collections:commons-collections:3.2.1 -> 3.2.2
+|    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24 (*)
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-jdbm-partition:2.0.0-M24 (*)
++--- junit:junit:4.13
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.scalatest:scalatest_2.13:3.0.8
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scalactic:scalactic_2.13:3.0.8
+|    |    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    |    \--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.scala-lang.modules:scala-xml_2.13:1.2.0
+|         \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.slf4j:slf4j-log4j12:1.7.30
+|    +--- org.slf4j:slf4j-api:1.7.30
+|    \--- log4j:log4j:1.2.17
+\--- jfreechart:jfreechart:1.0.0
+     \--- jfree:jfreechart:1.0.0
+          +--- jfree:jcommon:1.0.0
+          |    \--- junit:junit:3.8 -> 4.13 (*)
+          \--- junit:junit:3.8 -> 4.13 (*)
+
+testCompileOnly - Compile only dependencies for source set 'test'. (n)
+No dependencies
+
+testImplementation - Implementation only dependencies for source set 'test'. (n)
+No dependencies
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- project :clients
+|    +--- com.github.luben:zstd-jni:1.4.5-2
+|    +--- org.lz4:lz4-java:1.7.1
+|    +--- org.xerial.snappy:snappy-java:1.1.7.3
+|    \--- org.slf4j:slf4j-api:1.7.30
++--- com.fasterxml.jackson.core:jackson-databind:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.10.2
+|    +--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    \--- com.fasterxml.jackson.module:jackson-module-paranamer:2.10.2
+|         +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|         \--- com.thoughtworks.paranamer:paranamer:2.8
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-core:2.10.2
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2
+|    +--- com.fasterxml.jackson.core:jackson-core:2.10.2
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.10.2 (*)
++--- net.sf.jopt-simple:jopt-simple:5.0.4
++--- com.yammer.metrics:metrics-core:2.2.0
+|    \--- org.slf4j:slf4j-api:1.7.2 -> 1.7.30
++--- org.scala-lang.modules:scala-collection-compat_2.13:2.1.6
+|    \--- org.scala-lang:scala-library:2.13.1 -> 2.13.2
++--- org.scala-lang.modules:scala-java8-compat_2.13:0.9.1
+|    \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.scala-lang:scala-library:2.13.2
++--- org.scala-lang:scala-reflect:2.13.2
+|    \--- org.scala-lang:scala-library:2.13.2
++--- com.typesafe.scala-logging:scala-logging_2.13:3.9.2
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
++--- org.slf4j:slf4j-api:1.7.30
++--- org.apache.zookeeper:zookeeper:3.5.8
+|    +--- org.apache.zookeeper:zookeeper-jute:3.5.8
+|    |    \--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- org.apache.yetus:audience-annotations:0.5.0
+|    +--- io.netty:netty-handler:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-resolver:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final
+|    |    |    \--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-transport:4.1.48.Final
+|    |    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    |    \--- io.netty:netty-resolver:4.1.48.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    +--- io.netty:netty-transport-native-epoll:4.1.48.Final
+|    |    +--- io.netty:netty-common:4.1.48.Final
+|    |    +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.48.Final (*)
+|    |    \--- io.netty:netty-transport-native-unix-common:4.1.48.Final
+|    |         +--- io.netty:netty-common:4.1.48.Final
+|    |         +--- io.netty:netty-buffer:4.1.48.Final (*)
+|    |         \--- io.netty:netty-transport:4.1.48.Final (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- commons-cli:commons-cli:1.4
++--- org.bouncycastle:bcpkix-jdk15on:1.64
+|    \--- org.bouncycastle:bcprov-jdk15on:1.64
++--- org.mockito:mockito-core:3.3.3
+|    +--- net.bytebuddy:byte-buddy:1.10.5
+|    +--- net.bytebuddy:byte-buddy-agent:1.10.5
+|    \--- org.objenesis:objenesis:2.6 -> 3.1
++--- org.easymock:easymock:4.2
+|    \--- org.objenesis:objenesis:3.1
++--- org.apache.directory.api:api-all:1.0.2
+|    +--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.xpp3:1.1.4c_7
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.dom4j:1.6.1_5
+|    +--- commons-pool:commons-pool:1.6
+|    +--- commons-lang:commons-lang:2.6
+|    +--- commons-collections:commons-collections:3.2.2
+|    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    \--- commons-codec:commons-codec:1.11
++--- org.apache.directory.server:apacheds-core-api:2.0.0-M24
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.server:apacheds-core-constants:2.0.0-M24
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.api:api-i18n:1.0.0
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0
+|    |    \--- org.apache.directory.api:api-i18n:1.0.0
+|    +--- org.apache.directory.api:api-ldap-client-api:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.mina:mina-core:2.0.16
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.21 -> 1.7.30
+|    |    |    |    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    |    \--- commons-codec:commons-codec:1.10 -> 1.11
+|    |    |    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    \--- commons-collections:commons-collections:3.2.2
+|    |    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    \--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0
+|    |    |         \--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    +--- commons-pool:commons-pool:1.6
+|    |    \--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    \--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- net.sf.ehcache:ehcache:2.10.4
+|    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.30
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-interceptor-kerberos:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3
+|    |    |    |    \--- org.slf4j:slf4j-api:1.7.7 -> 1.7.30
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-admin:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-authn:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-client-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-number:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-authz:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-aci:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-changelog:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-collective:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-event:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-exception:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-journal:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-normalization:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-operational:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-referral:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-schema:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-subtree:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-interceptors-trigger:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.api:api-ldap-extras-trigger:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    |    +--- org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5
+|    |    |    |    \--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- org.bouncycastle:bcprov-jdk15on:1.56 -> 1.64
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-kerberos:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.api:api-asn1-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- net.sf.ehcache:ehcache:2.10.4 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-protocol-ldap:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-protocol-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3 (*)
+|    +--- org.apache.directory.server:apacheds-jdbm-partition:2.0.0-M24
+|    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    +--- org.apache.directory.jdbm:apacheds-jdbm1:2.0.0-M3 (*)
+|    |    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24
+|    |    |    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    |    |    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    |    |    +--- commons-collections:commons-collections:3.2.2
+|    |    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    |    +--- commons-lang:commons-lang:2.6
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-kerberos-codec:2.0.0-M24 (*)
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-asn1-ber:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-client-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-codec-api:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-extras-sp:1.0.0
+|    |    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-i18n:1.0.0
+|    |    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-codec:1.0.0 (*)
+|    |    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    |    \--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-ldap-extras-util:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-codec-core:1.0.0 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    +--- org.apache.mina:mina-core:2.0.16 (*)
+|    +--- org.bouncycastle:bcprov-jdk15on:1.56 -> 1.64
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-ldif-partition:2.0.0-M24
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-mavibot-partition:2.0.0-M24
+|    +--- org.apache.directory.mavibot:mavibot:1.0.0-M8
+|    |    +--- commons-collections:commons-collections:3.2.1 -> 3.2.2
+|    |    \--- org.slf4j:slf4j-api:1.7.10 -> 1.7.30
+|    +--- org.apache.directory.server:apacheds-core-api:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-shared:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-core-avl:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-i18n:2.0.0-M24 (*)
+|    +--- org.apache.directory.server:apacheds-xdbm-partition:2.0.0-M24 (*)
+|    +--- commons-lang:commons-lang:2.6
+|    +--- org.apache.directory.api:api-ldap-model:1.0.0 (*)
+|    +--- org.apache.directory.api:api-util:1.0.0 (*)
+|    \--- org.slf4j:slf4j-api:1.7.25 -> 1.7.30
++--- org.apache.directory.server:apacheds-jdbm-partition:2.0.0-M24 (*)
++--- junit:junit:4.13
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.scalatest:scalatest_2.13:3.0.8
+|    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    +--- org.scalactic:scalactic_2.13:3.0.8
+|    |    +--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
+|    |    \--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    +--- org.scala-lang:scala-reflect:2.13.0 -> 2.13.2 (*)
+|    \--- org.scala-lang.modules:scala-xml_2.13:1.2.0
+|         \--- org.scala-lang:scala-library:2.13.0 -> 2.13.2
++--- org.slf4j:slf4j-log4j12:1.7.30
+|    +--- org.slf4j:slf4j-api:1.7.30
+|    \--- log4j:log4j:1.2.17
+\--- jfreechart:jfreechart:1.0.0
+     \--- jfree:jfreechart:1.0.0
+          +--- jfree:jcommon:1.0.0
+          |    \--- junit:junit:3.8 -> 4.13 (*)
+          \--- junit:junit:3.8 -> 4.13 (*)
+
+testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+No dependencies
+
+zinc - The Zinc incremental compiler to be used for this Scala project.
+\--- org.scala-sbt:zinc_2.12:1.3.5
+     +--- org.scala-lang:scala-library:2.12.10
+     +--- org.scala-sbt:zinc-core_2.12:1.3.5
+     |    +--- org.scala-lang:scala-library:2.12.10
+     |    +--- org.scala-sbt:zinc-apiinfo_2.12:1.3.5
+     |    |    +--- org.scala-lang:scala-library:2.12.10
+     |    |    +--- org.scala-sbt:compiler-interface:1.3.5
+     |    |    |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    |    |    \--- org.scala-sbt:util-interface:1.3.0
+     |    |    +--- org.scala-sbt:compiler-bridge_2.12:1.3.5
+     |    |    |    +--- org.scala-sbt:compiler-interface:1.3.5 (*)
+     |    |    |    \--- com.google.protobuf:protobuf-java:3.7.0
+     |    |    +--- org.scala-sbt:zinc-classfile_2.12:1.3.5
+     |    |    |    +--- org.scala-lang:scala-library:2.12.10
+     |    |    |    +--- org.scala-sbt:compiler-interface:1.3.5 (*)
+     |    |    |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    |    |    +--- org.scala-sbt:io_2.12:1.3.0
+     |    |    |    |    +--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     |    |    |    |    +--- com.swoval:file-tree-views:2.1.3
+     |    |    |    |    +--- net.java.dev.jna:jna:4.5.0
+     |    |    |    |    \--- net.java.dev.jna:jna-platform:4.5.0
+     |    |    |    |         \--- net.java.dev.jna:jna:4.5.0
+     |    |    |    \--- org.scala-sbt:util-logging_2.12:1.3.0
+     |    |    |         +--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     |    |    |         +--- org.scala-sbt:util-interface:1.3.0
+     |    |    |         +--- com.eed3si9n:sjson-new-core_2.12:0.8.3
+     |    |    |         |    \--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     |    |    |         +--- jline:jline:2.14.6
+     |    |    |         +--- org.apache.logging.log4j:log4j-api:2.11.2
+     |    |    |         +--- org.apache.logging.log4j:log4j-core:2.11.2
+     |    |    |         |    \--- org.apache.logging.log4j:log4j-api:2.11.2
+     |    |    |         +--- com.lmax:disruptor:3.4.2
+     |    |    |         +--- com.eed3si9n:sjson-new-scalajson_2.12:0.8.3
+     |    |    |         |    +--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     |    |    |         |    +--- com.eed3si9n:sjson-new-core_2.12:0.8.3 (*)
+     |    |    |         |    +--- com.eed3si9n:shaded-scalajson_2.12:1.0.0-M4
+     |    |    |         |    |    \--- org.scala-lang:scala-library:2.12.2 -> 2.12.10
+     |    |    |         |    \--- org.spire-math:jawn-parser_2.12:0.10.4
+     |    |    |         |         \--- org.scala-lang:scala-library:2.12.0 -> 2.12.10
+     |    |    |         +--- org.scala-lang:scala-reflect:2.12.8 -> 2.12.10
+     |    |    |         |    \--- org.scala-lang:scala-library:2.12.10
+     |    |    |         \--- org.scala-sbt:io_2.12:1.3.0 (*)
+     |    |    \--- com.google.protobuf:protobuf-java:3.7.0
+     |    +--- org.scala-sbt:zinc-classpath_2.12:1.3.5
+     |    |    +--- org.scala-lang:scala-compiler:2.12.10
+     |    |    |    +--- org.scala-lang:scala-library:2.12.10
+     |    |    |    +--- org.scala-lang:scala-reflect:2.12.10 (*)
+     |    |    |    \--- org.scala-lang.modules:scala-xml_2.12:1.0.6
+     |    |    |         \--- org.scala-lang:scala-library:2.12.0 -> 2.12.10
+     |    |    +--- org.scala-lang:scala-library:2.12.10
+     |    |    +--- org.scala-sbt:compiler-interface:1.3.5 (*)
+     |    |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    |    +--- org.scala-sbt:launcher-interface:1.0.0
+     |    |    \--- org.scala-sbt:io_2.12:1.3.0 (*)
+     |    +--- org.scala-sbt:compiler-interface:1.3.5 (*)
+     |    +--- com.trueaccord.scalapb:scalapb-runtime_2.12:0.6.0
+     |    |    +--- org.scala-lang:scala-library:2.12.2 -> 2.12.10
+     |    |    +--- com.trueaccord.lenses:lenses_2.12:0.4.12
+     |    |    |    \--- org.scala-lang:scala-library:2.12.2 -> 2.12.10
+     |    |    +--- com.lihaoyi:fastparse_2.12:0.4.2
+     |    |    |    +--- org.scala-lang:scala-library:2.12.0 -> 2.12.10
+     |    |    |    +--- com.lihaoyi:fastparse-utils_2.12:0.4.2
+     |    |    |    |    +--- org.scala-lang:scala-library:2.12.0 -> 2.12.10
+     |    |    |    |    \--- com.lihaoyi:sourcecode_2.12:0.1.3
+     |    |    |    |         \--- org.scala-lang:scala-library:2.12.0 -> 2.12.10
+     |    |    |    \--- com.lihaoyi:sourcecode_2.12:0.1.3 (*)
+     |    |    \--- com.google.protobuf:protobuf-java:3.3.1 -> 3.7.0
+     |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    +--- org.scala-sbt:io_2.12:1.3.0 (*)
+     |    +--- org.scala-sbt:util-logging_2.12:1.3.0 (*)
+     |    \--- org.scala-sbt:util-relation_2.12:1.3.0
+     |         \--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     +--- org.scala-sbt:zinc-persist_2.12:1.3.5
+     |    +--- org.scala-lang:scala-library:2.12.10
+     |    +--- org.scala-sbt:zinc-core_2.12:1.3.5 (*)
+     |    +--- com.trueaccord.scalapb:scalapb-runtime_2.12:0.6.0 (*)
+     |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    \--- org.scala-sbt:sbinary_2.12:0.5.0
+     |         +--- org.scala-lang:scala-library:2.12.4 -> 2.12.10
+     |         \--- org.scala-lang.modules:scala-xml_2.12:1.0.6 (*)
+     +--- org.scala-sbt:zinc-compile-core_2.12:1.3.5
+     |    +--- org.scala-lang:scala-library:2.12.10
+     |    +--- org.scala-sbt:compiler-interface:1.3.5 (*)
+     |    +--- org.scala-sbt:zinc-classpath_2.12:1.3.5 (*)
+     |    +--- org.scala-sbt:zinc-apiinfo_2.12:1.3.5 (*)
+     |    +--- org.scala-sbt:zinc-classfile_2.12:1.3.5 (*)
+     |    +--- com.google.protobuf:protobuf-java:3.7.0
+     |    +--- org.scala-sbt:launcher-interface:1.0.0
+     |    +--- org.scala-lang.modules:scala-parser-combinators_2.12:1.1.2
+     |    |    \--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     |    +--- org.scala-sbt:util-logging_2.12:1.3.0 (*)
+     |    +--- org.scala-sbt:io_2.12:1.3.0 (*)
+     |    \--- org.scala-sbt:util-control_2.12:1.3.0
+     |         \--- org.scala-lang:scala-library:2.12.8 -> 2.12.10
+     +--- org.scala-sbt:zinc-classfile_2.12:1.3.5 (*)
+     \--- com.google.protobuf:protobuf-java:3.7.0
+
+(*) - dependencies omitted (listed previously)
+
+(n) - Not resolved (configuration is not meant to be resolved)
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.5/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 889ms
+1 actionable task: 1 executed
