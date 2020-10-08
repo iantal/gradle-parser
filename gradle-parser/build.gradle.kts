@@ -27,6 +27,8 @@ dependencies {
 	implementation("io.grpc:grpc-protobuf:1.28.0")
 	implementation("io.grpc:grpc-stub:1.28.0")
 
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3")
+
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
