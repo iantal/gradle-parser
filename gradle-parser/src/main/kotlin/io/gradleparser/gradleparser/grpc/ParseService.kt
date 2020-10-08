@@ -1,9 +1,12 @@
 package io.gradleparser.gradleparser.grpc
 
 import io.gradleparser.gradleparser.GradleParseServiceGrpcKt
+import io.gradleparser.gradleparser.Library
 import io.gradleparser.gradleparser.ParseRequest
 import io.gradleparser.gradleparser.ParseResponse
 import io.gradleparser.gradleparser.Project
+import io.gradleparser.gradleparser.core.DependencyExtractor
+import io.gradleparser.gradleparser.core.LibraryType
 import java.util.*
 import java.util.logging.Logger
 
@@ -15,34 +18,57 @@ class ParseService : GradleParseServiceGrpcKt.GradleParseServiceCoroutineImplBas
         log.info("Received gradle parse request")
 
         val decodedData = decodeBase64(request.data)
-        println(decodedData)
-//        val parser = Parser(StateManager())
-//        val parsedData = parser.parse(decodedData)
-//
-//        val projects = mutableListOf<Project>()
-//        for (project in parsedData) {
-//            val libs = mutableListOf<Library>()
-//            for (library in project?.libraries!!) {
-//                libs.add(Library.newBuilder()
-//                        .setName(library.name)
-//                        .setType(library.type.toString().toLowerCase())
-//                        .setScope(library.scope.toString().toLowerCase())
-//                        .build())
-//            }
-//            projects.add(Project.newBuilder()
-//                    .setName(project.name)
-//                    .addAllLibraries(libs)
-//                    .build())
-//        }
+        val parser = DependencyExtractor(decodedData)
+        val extractedData = parser.extract()
+
+        val projects = mutableListOf<Project>()
+
+        for ((project, subproject) in extractedData.projects) {
+            val libs = mutableSetOf<Library>()
+
+            for ((sourceType, nodes) in subproject.sourceSet) {
+                val scope: String = when {
+                    sourceType.startsWith("test") -> "test"
+                    sourceType.startsWith("compile") -> "compile"
+                    sourceType.contains("runtime") -> "runtime"
+                    else -> sourceType.toLowerCase()
+                }
+
+                for (node in nodes) {
+                    var name = node.text
+                    if (name != null && name.contains(" ")) {
+                        val splits = node.text?.split(" ")
+                        if (splits?.size!! > 1) {
+                            name = splits[0].trim()
+                        }
+                    }
+                    val type = if (node.level == 0) LibraryType.DIRECT else LibraryType.TRANSITIVE
+
+                    libs.add(Library.newBuilder()
+                            .setName(name?.trim())
+                            .setType(type.toString().toLowerCase())
+                            .setScope(scope)
+                            .build())
+                }
+            }
+
+            var projectName = project
+            if (project.contains(" ")) {
+                projectName = project.split(" ")[0].trim()
+            }
+
+            projects.add(Project.newBuilder()
+                    .setName(projectName)
+                    .addAllLibraries(libs)
+                    .build())
+        }
 
         return ParseResponse.newBuilder()
-                .addAllProjects(mutableListOf(Project.newBuilder()
-                        .setName("abc")
-                        .build()))
+                .addAllProjects(projects)
                 .build()
     }
 
-    private fun decodeBase64(data: String) : String{
+    private fun decodeBase64(data: String): String {
         val decoder = Base64.getDecoder()
         val decoded = decoder.decode(data)
         return String(decoded, Charsets.UTF_8)

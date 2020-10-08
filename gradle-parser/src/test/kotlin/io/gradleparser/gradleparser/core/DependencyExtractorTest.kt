@@ -76,4 +76,5 @@ internal class DependencyExtractorTest {
 
         assertThat(nodes?.get(1)?.text).isEqualTo("com.github.luben:zstd-jni:1.4.5-2")
     }
+
 }

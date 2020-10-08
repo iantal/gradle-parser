@@ -22,3 +22,20 @@ class Node(
         var level: Int = 0,
         var parent: Node? = null
 )
+
+enum class LibraryType {
+    DIRECT,
+    TRANSITIVE
+}
+
+data class Project(var name: String, val libraries: MutableList<Library> = mutableListOf()) {
+    fun addLibrary(library: Library) {
+        libraries.add(library)
+    }
+}
+
+data class Library(
+        var name: String,
+        val type: String,
+        val scope: String
+)
