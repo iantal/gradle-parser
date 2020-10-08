@@ -51,6 +51,7 @@ class SourceParser internal constructor(data: String) : AutoCloseable {
             oldLineLevel = currentLineLevel
             currentLine = line
         }
+        scanner.close()
     }
 
     private fun parseCurrentLineData(root: Node, stack: Stack<Node>, currentLineLevel: Int, spaceDiff: Int, data: String) {

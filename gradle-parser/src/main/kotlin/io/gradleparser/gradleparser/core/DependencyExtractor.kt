@@ -19,7 +19,7 @@ class DependencyExtractor(val data: String) {
             projectIndex = firstProjectMatcher.start()
 
             var projectName: String = firstProjectMatcher.group(1)
-            if (projectName.startsWith("ProjectTag :")) {
+            if (projectName.startsWith("Project :")) {
                 projectName = projectName.substring(9)
             }
 
@@ -56,12 +56,7 @@ class DependencyExtractor(val data: String) {
             }
             val sourceSetParser = SourceParser(projectDepsData.substring(treeLineStart))
 
-            try {
-                sourceSetParser.walkTree()
-            } catch (e: Exception) {
-                throw ParseException("Cannot extract source set: " + e.message)
-            }
-
+            sourceSetParser.walkTree()
             subproject.addSource(sourceSet, sourceSetParser.nodes)
             sourceIndex = projectDepsData.indexOf("\n\n", treeLineStart)
         }
