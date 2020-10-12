@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  maven-parser:
+  gradle-parser:
     container_name: gradle-parser
     build:
       context: ../
