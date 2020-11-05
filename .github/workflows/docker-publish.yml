@@ -14,9 +14,9 @@ jobs:
       with:
         java-version: 15
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x gradle-parser/gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradle-parser/gradlew build
     - uses: mr-smithers-excellent/docker-build-push@v4
       name: Build & push Docker image
       with:
