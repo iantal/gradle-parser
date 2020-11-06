@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  gradle-parser:
+    container_name: gradle-parser
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - 4001:4001
+
+networks:
+  default:
+    external:
+      name: proxynet
