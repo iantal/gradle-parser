@@ -19,20 +19,14 @@ jobs:
       - name: Change directory to gradle-parser project
         run: |
           pwd
-          cd gradle-parser
-          ls -R
           chmod +x gradlew
           ./gradlew build
-          cd ..
-      - name: List dir
-        run: |
-          pwd
-          ls -lah
+
       - uses: mr-smithers-excellent/docker-build-push@v4
         name: Build & push Docker image
         with:
           image: micky0000/seclens
           registry: docker.io
-          dockerfile: docker/DockerfileGithubAction
+          dockerfile: DockerfileGithubAction
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
