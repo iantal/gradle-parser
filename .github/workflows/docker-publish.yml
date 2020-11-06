@@ -26,6 +26,6 @@ jobs:
         with:
           image: micky0000/seclens
           registry: docker.io
-          dockerfile: gradle-parser/docker/Dockerfile
+          dockerfile: docker/Dockerfile
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
