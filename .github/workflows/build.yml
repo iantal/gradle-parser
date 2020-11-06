@@ -20,8 +20,11 @@ jobs:
           java-version: 15
       - name: Change directory to gradle-parser project
         run: |
+          pwd
           cd gradle-parser
+          pwd
           ls -lah
+          pwd
           cd gradle-parser
           ls -lah
         
