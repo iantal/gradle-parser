@@ -3,7 +3,6 @@ USER root
 WORKDIR /builder
 ADD . /builder
 RUN gradle build --stacktrace
-RUN ls -lah /builder/build/libs
 
 FROM openjdk:15-jdk-alpine
 WORKDIR /app
