@@ -20,7 +20,7 @@ jobs:
         run: |
           pwd
           cd gradle-parser
-          tree
+          ls -R
           chmod +x gradlew
           ./gradlew build
       - name: List dir
