@@ -1,4 +1,4 @@
-![Build](https://github.com/iantal/gradle-parser/workflows/Build/badge.svg) ![KTlint Formatting](https://github.com/iantal/gradle-parser/workflows/KTlint%20Formatting/badge.svg)
+![Build](https://github.com/iantal/gradle-parser/workflows/Build/badge.svg)
 
 # gradle-parser
 
