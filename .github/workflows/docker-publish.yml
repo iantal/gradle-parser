@@ -21,6 +21,10 @@ jobs:
           ls -lah
           chmod +x gradlew
           ./gradlew build
+      - name: List dir
+        run: |
+          pwd
+          ls -lah
       - uses: mr-smithers-excellent/docker-build-push@v4
         name: Build & push Docker image
         with:
