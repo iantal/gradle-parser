@@ -8,20 +8,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 15
-      uses: actions/setup-java@v1
-      with:
-        java-version: 15
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradle-parser/gradlew
-    - name: Build with Gradle
-      run: ./gradle-parser/gradlew build
-    - uses: mr-smithers-excellent/docker-build-push@v4
-      name: Build & push Docker image
-      with:
-        image: micky0000/seclens
-        registry: docker.io
-        dockerfile: gradle-parser/docker/Dockerfile
-        username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_PASS }}
+      - uses: actions/checkout@v2
+      
+      - name: Set up JDK 15
+        uses: actions/setup-java@v1
+        with:
+          java-version: 15
+      - name: Change directory to gradle-parser project
+        run: |
+          pwd
+          cd gradle-parser
+          ls -lah
+          chmod +x gradlew
+          ./gradlew build
+      - uses: mr-smithers-excellent/docker-build-push@v4
+        name: Build & push Docker image
+        with:
+          image: micky0000/seclens
+          registry: docker.io
+          dockerfile: gradle-parser/docker/Dockerfile
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
