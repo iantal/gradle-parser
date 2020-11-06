@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package io.gradleparser.gradleparser;
+
+option java_multiple_files = true;
+
+service GradleParseService {
+  rpc Parse (ParseRequest) returns (ParseResponse) {}
+}
+
+message ParseRequest {
+  string data = 1;
+}
+
+message ParseResponse {
+  repeated Project projects = 2;
+}
+
+message Project {
+  string name = 1;
+  repeated Library libraries = 2;
+}
+
+message Library {
+  string name = 1;
+  string type = 2;
+  string scope = 3;
+}
