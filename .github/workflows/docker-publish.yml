@@ -23,6 +23,7 @@ jobs:
           ls -R
           chmod +x gradlew
           ./gradlew build
+          cd ..
       - name: List dir
         run: |
           pwd
