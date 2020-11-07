@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 15
-      - name: Change directory to gradle-parser project
+      - name: Build gradle-parser project
         run: |
           pwd
           ls -lah
