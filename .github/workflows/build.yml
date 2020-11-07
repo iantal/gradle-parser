@@ -21,7 +21,6 @@ jobs:
       - name: Change directory to gradle-parser project
         run: |
           pwd
-          cd gradle-parser
           ls -lah
           chmod +x gradlew
           ./gradlew build
