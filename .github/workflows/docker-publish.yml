@@ -25,6 +25,6 @@ jobs:
         with:
           image: micky0000/seclens
           registry: docker.io
-          dockerfile: DockerfileGithubAction
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
