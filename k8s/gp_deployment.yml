@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gp-deployment
+  labels:
+    app: gp
+spec:
+  selector:
+    matchLabels:
+      app: gp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gp
+    spec:
+      imagePullSecrets:
+        - name: dockerregistrykey
+      containers:
+        - name: gp
+          image: micky0000/seclens:v1.0.0-gradle-parser
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 4001
