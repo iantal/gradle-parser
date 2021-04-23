@@ -18,7 +18,7 @@ spec:
         - name: dockerregistrykey
       containers:
         - name: gp
-          image: micky0000/seclens:v1.0.0-gradle-parser
+          image: {{ .Values.registry }}:{{ .Values.tag }}
           imagePullPolicy: "Always"
           ports:
             - containerPort: 4001
